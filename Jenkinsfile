@@ -2,7 +2,7 @@
 node { 
 	def PRODUCT_NAME=env.JOB_NAME.toLowerCase()
 	String IMAGE_NAME="${PRODUCT_NAME}"
-	String PORT='3000'
+	String PORT='81'
 	String GIT_URL = 'https://github.com/liangx8892/' + IMAGE_NAME + '.git'
 	String DOCKER_REPO="registry.cn-shenzhen.aliyuncs.com/liangx8892"
 	String DOCKER_REG="https://" + DOCKER_REPO + "/"
