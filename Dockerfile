@@ -11,5 +11,5 @@ FROM nginx:latest
 RUN rm -f /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/
 COPY --from=builder /usr/src/app/dist/fsd-frontend /usr/share/nginx/html
-EXPOSE 80
+EXPOSE 81
 CMD ["nginx", "-g", "daemon off;"]
