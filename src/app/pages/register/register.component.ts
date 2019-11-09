@@ -15,6 +15,12 @@ export class RegisterComponent implements OnInit {
       this.validateForm.controls[i].markAsDirty();
       this.validateForm.controls[i].updateValueAndValidity();
     }
+
+    if (!this.validateForm.valid) {
+      return;
+    }
+
+    console.log('register data:', this.validateForm.value);
   }
 
   updateConfirmValidator(): void {
@@ -41,6 +47,8 @@ export class RegisterComponent implements OnInit {
       mobile: [null, [Validators.required]],
       firstName: [null, [Validators.required]],
       lastName: [null, [Validators.required]],
+      role: [null, [Validators.required]],
     });
+    this.validateForm.controls['role'].setValue('user');
   }
 }
